@@ -27,14 +27,14 @@ public class TestTPA {
 	@Test
 	public void incripcionAPartido() {
 		
-		Condicion condicion = null;
+		CondicionDelJugador condicionDelJugador = null;
 		
 		Jugador nicolasPardo = new JugadorStandard();
-		Jugador santiPugliese = new JugadorCondicional(condicion);
+		Jugador santiPugliese = new JugadorCondicional(condicionDelJugador);
 		Jugador juanManrique = new JugadorSolidario();
 		Jugador nicoLedesma = new JugadorSolidario();
 
-		partido.setFecha(LocalDate.of(2014, 04, 25));
+		partido.setFecha(LocalDate.of(14, 04, 25));
 		partido.setHorario(LocalTime.of(18, 00, 00));
 		
 		nicolasPardo.inscribir(partido);

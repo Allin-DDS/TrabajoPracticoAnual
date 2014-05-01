@@ -57,7 +57,7 @@ public class Partido {
 		}
 	
 		
-	};
+	}
 	
 	
 	public void agregarJugadorStandard(JugadorStandard jugadorStandard) {

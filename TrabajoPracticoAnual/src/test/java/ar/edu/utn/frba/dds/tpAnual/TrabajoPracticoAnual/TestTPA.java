@@ -5,8 +5,7 @@ package ar.edu.utn.frba.dds.tpAnual.TrabajoPracticoAnual;
 
 import java.time.LocalTime;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collection;
+
 
 import org.junit.Before;
 import org.junit.Test; 
@@ -15,22 +14,20 @@ import org.junit.Test;
 
 public class TestTPA {
 	public Partido partido;
-	
+
+	public Fixture fixture;
+
 	
 	@Before
 		public void nuevoPartido(){
 
-		partido = new Partido();
+		fixture = new Fixture();
+		partido = new Partido(LocalDate.of(2014, 04, 25),LocalTime.of(18, 00, 00));
 		
 		
 	}
 
-	@Test 
-	public void setearHoraDia(){
-		partido.setFecha(LocalDate.of(2014, 04, 25));
-		partido.setHorario(LocalTime.of(18, 00, 00));
-	}
-	
+
 	@Test
 	public void incripcionAPartido() {
 		
@@ -49,19 +46,20 @@ public class TestTPA {
 		juanManrique.inscribir(partido);
 		matiasReinoso.inscribir(partido);
 		
-	
+		partido.agregarPartido(fixture);
+
 		partido.listaDeLosQueJuegan();
-		
-	int n = 0;
-		 for(Jugador jugador : partido.totalDeJugadoresSolidarios){
+	}
+}
+	/*int n = 0;
+		 for(Partido partidos : fixture.partidos){
 			 n = n+1;
 			 System.out.println(n);
-			 
-			 
+			 			 
 		 }
 		
-	}
+	}*/
 
 		
 	
-}
+

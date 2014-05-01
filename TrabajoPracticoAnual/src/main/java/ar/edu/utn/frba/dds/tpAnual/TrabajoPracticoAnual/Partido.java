@@ -18,7 +18,12 @@ public class Partido {
 
 
 
-	public LocalTime getHorario() {
+	public Partido(LocalDate of, LocalTime of2) {
+		this.fecha= of;
+		this.horario= of2;
+	}
+
+	/*public LocalTime getHorario() {
 		return horario;
 	}
 
@@ -35,7 +40,7 @@ public class Partido {
 	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
-
+*/
 
 	public  boolean hayLugarDisponible(){
 		
@@ -100,9 +105,14 @@ public class Partido {
 		this.totalDeJugadoresCondicionales.remove();
 		
 	}
+	 
+	public void agregarPartido(Fixture fixture){
+		fixture.agregar(this);
+		
+		
+	}
 	
-	
-	
+
 	
 
 	

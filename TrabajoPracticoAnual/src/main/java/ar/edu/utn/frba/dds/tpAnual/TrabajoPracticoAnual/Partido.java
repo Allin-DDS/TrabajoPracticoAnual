@@ -16,8 +16,6 @@ public class Partido {
 	Queue<Jugador> totalDeJugadoresCondicionales = new LinkedList<Jugador>();
 	Stack<Jugador> totalDeJugadoresSolidarios = new Stack <Jugador>();
 
-	
-	
 
 
 	public LocalTime getHorario() {

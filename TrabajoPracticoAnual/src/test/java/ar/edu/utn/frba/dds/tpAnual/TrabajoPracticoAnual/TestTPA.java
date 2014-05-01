@@ -19,17 +19,17 @@ public class TestTPA {
 	
 	@Before
 		public void nuevoPartido(){
-	
+
 		partido = new Partido();
 		
 		
 	}
 
-	/*@Test 
+	@Test 
 	public void setearHoraDia(){
 		partido.setFecha(LocalDate.of(2014, 04, 25));
 		partido.setHorario(LocalTime.of(18, 00, 00));
-	}*/
+	}
 	
 	@Test
 	public void incripcionAPartido() {
@@ -52,13 +52,13 @@ public class TestTPA {
 	
 		partido.listaDeLosQueJuegan();
 		
-	/*int n = 0;
-		 for(Jugador jugador : partido.equipo){
+	int n = 0;
+		 for(Jugador jugador : partido.totalDeJugadoresSolidarios){
 			 n = n+1;
 			 System.out.println(n);
 			 
 			 
-		 }*/
+		 }
 		
 	}
 

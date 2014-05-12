@@ -13,8 +13,8 @@ public class Partido {
 	LocalTime horario;
 	LocalDate fecha;
 	Collection<Jugador> equipo = new ArrayList<Jugador>();
-	Queue<Jugador> totalDeJugadoresCondicionales = new LinkedList<Jugador>();
-	Stack<Jugador> totalDeJugadoresSolidarios = new Stack <Jugador>();
+	Queue<Jugador> colaDeJugadoresCondicionales = new LinkedList<Jugador>();
+	Stack<Jugador> pilaDeJugadoresSolidarios = new Stack <Jugador>();
 
 
 
@@ -42,23 +42,7 @@ public class Partido {
 	}
 */
 
-	public  boolean hayLugarDisponible(){
 		
-		
-		int cupos = equipo.size();
-		
-		if(cupos < 10){
-			return true;
-			
-		}
-		else{
-			return false;
-
-		}
-	
-		
-	}
-	
 	
 	public void agregarJugadorStandard(JugadorStandard jugadorStandard) {
 		equipo.add(jugadorStandard);
@@ -67,14 +51,14 @@ public class Partido {
 
 
 	public void agregarJugadorCondicional(JugadorCondicional jugadorCondicional) {
-		totalDeJugadoresCondicionales.add(jugadorCondicional);
+		colaDeJugadoresCondicionales.add(jugadorCondicional);
 
 		
 	}
 
 
 	public void agregarJugadorSolidario(JugadorSolidario jugadorSolidario) {
-		totalDeJugadoresSolidarios.add(jugadorSolidario);
+		pilaDeJugadoresSolidarios.add(jugadorSolidario);
 
 	}
 
@@ -82,32 +66,31 @@ public class Partido {
 		
 		
 	
-		while(this.hayLugarDisponible() && !(this.totalDeJugadoresCondicionales.isEmpty())){
+		while(equipo.size()<10 && !(this.colaDeJugadoresCondicionales.isEmpty())){
 			agregarJugadoresCondicionales();
 		}
 		
-		while(this.hayLugarDisponible() && !(this.totalDeJugadoresSolidarios.empty())){	
+		while(equipo.size()<10  && !(this.pilaDeJugadoresSolidarios.empty())){	
 			agregarJugadoresSolidarios();
 			
 		}
 	}
 
 	private void agregarJugadoresSolidarios() {
-		Jugador jugadorSolidarioAJugar = this.totalDeJugadoresSolidarios.peek();
+		Jugador jugadorSolidarioAJugar = this.pilaDeJugadoresSolidarios.peek();
 		equipo.add(jugadorSolidarioAJugar);
-		this.totalDeJugadoresSolidarios.pop();		
+		this.pilaDeJugadoresSolidarios.pop();		
 	}
 
 	private void agregarJugadoresCondicionales() {
 		
-		Jugador jugadorCondicionalAJugar = (this.totalDeJugadoresCondicionales.element());
+		Jugador jugadorCondicionalAJugar = (this.colaDeJugadoresCondicionales.element());
 		equipo.add(jugadorCondicionalAJugar);
-		this.totalDeJugadoresCondicionales.remove();
+		this.colaDeJugadoresCondicionales.remove();
 		
 	}
 	 
-	public void agregarPartido(Fixture fixture){
-		fixture.agregar(this);
+
 		
 		
 	}
@@ -119,4 +102,4 @@ public class Partido {
 	
 
 	
-}
+

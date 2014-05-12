@@ -14,6 +14,8 @@ import org.junit.Test;
 
 public class TestTPA {
 	public Partido partido;
+	public Partido partidoB;
+
 
 	public Fixture fixture;
 
@@ -23,6 +25,10 @@ public class TestTPA {
 
 		fixture = new Fixture();
 		partido = new Partido(LocalDate.of(2014, 04, 25),LocalTime.of(18, 00, 00));
+		fixture.agregar(partido);
+		partidoB = new Partido(LocalDate.of(2014, 02, 25),LocalTime.of(18, 00, 00));
+		fixture.agregar(partidoB);
+		
 		
 		
 	}
@@ -45,20 +51,18 @@ public class TestTPA {
 		nicoLedesma.inscribir(partido);
 		juanManrique.inscribir(partido);
 		matiasReinoso.inscribir(partido);
+		matiasReinoso.inscribir(partidoB);
 		
-		partido.agregarPartido(fixture);
 
 		partido.listaDeLosQueJuegan();
-	}
-}
-	/*int n = 0;
-		 for(Partido partidos : fixture.partidos){
-			 n = n+1;
-			 System.out.println(n);
-			 			 
-		 }
 		
-	}*/
+		
+		
+	
+	}
+	}
+
+
 
 		
 	

@@ -16,7 +16,7 @@ public class JugadorStandard implements Jugador {
 
 
 
-	
+	holaSoyunerror
 	
 
 }
